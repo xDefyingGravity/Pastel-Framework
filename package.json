@@ -1,0 +1,35 @@
+{
+  "name": "pastel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "bun build src/index.ts --outdir=dist --minify --sourcemap --external=expr-eval",
+    "loc": "cloc --match-d='/(src|examples|tests)/' --exclude-dir=node_modules .",
+    "lint": "eslint src",
+    "format": "prettier --write .",
+    "dist": "bun run build && bun pm pack --filename pastel-0.0.1.tgz"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "dependencies": {
+    "expr-eval": "^2.0.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@happy-dom/global-registrator": "^17.1.8",
+    "@types/bun": "latest",
+    "@typescript-eslint/eslint-plugin": "^8.26.0",
+    "@typescript-eslint/parser": "^8.26.0",
+    "eslint": "^9.21.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.26.0"
+  },
+  "private": true
+}
