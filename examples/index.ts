@@ -1,5 +1,51 @@
-import { Div, Input, Paragraph, Head, Router, RouterLink } from '../src'
+import {
+  Div,
+  Input,
+  Paragraph,
+  Head,
+  Router,
+  RouterLink,
+  Pipeline,
+} from '../src'
 import { Counter } from './components/counter'
+
+const pipeline = new Pipeline([
+  {
+    modifier: 'attributes',
+    function: (attributes: any) => {
+      attributes['class'] = 'text-6xl'
+      return attributes
+    },
+    whitelist: [
+      "p"
+    ]
+  },
+  {
+    modifier: 'text',
+    function: (text: string) => {
+      return text.replace('Hello', 'Hi')
+    },
+  },
+  {
+    modifier: 'style',
+    function: (style: any) => {
+      style['font-size'] = '2rem!important'
+      return style
+    },
+    whitelist: [
+      'input'
+    ]
+  }
+])
+
+const input = new Input()
+  .withId('input')
+  .withPlaceholder('Enter your name')
+  .onInput((event: Event) => {
+    const input = event.target as HTMLInputElement
+    app.state.set('name', input.value)
+  })
+  .withClassNames('text-gray-900', 'font-bold', 'mb-8')
 const app = new Div()
   .withClassNames(
     'flex',
@@ -22,14 +68,7 @@ const app = new Div()
         'text-center',
         'p-4',
       ),
-    new Input()
-      .withId('input')
-      .withPlaceholder('Enter your name')
-      .onInput((event: Event) => {
-        const input = event.target as HTMLInputElement
-        app.state.set('name', input.value)
-      })
-      .withClassNames('text-gray-900', 'font-bold', 'mb-8'),
+    input,
     new Counter(),
     new RouterLink('/about')
       .withText('About')
@@ -63,7 +102,7 @@ app.onDestroy(() => {
   // recommended to destroy state when component is destroyed, unless you are halting the destroy process
   app.state.destroy()
 
-  return false
+  return true;
 })
 
 const head = new Head('My Awesome app')
@@ -76,4 +115,5 @@ const router = new Router(
   head,
 )
 
+pipeline.mount()
 router.listen()

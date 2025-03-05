@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "bun build src/index.ts --outdir=dist --minify --sourcemap --external=expr-eval",
+    "build": "bun run utils/build.ts",
     "loc": "cloc --match-d='/(src|examples|tests)/' --exclude-dir=node_modules .",
     "lint": "eslint src",
     "format": "prettier --write .",
@@ -17,6 +17,7 @@
     "package.json"
   ],
   "dependencies": {
+    "bun-plugin-dts": "^0.3.0",
     "expr-eval": "^2.0.2"
   },
   "devDependencies": {

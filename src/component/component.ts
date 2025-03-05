@@ -16,7 +16,8 @@ export class Component {
   public parent: Component | null = null
   public onRenderFunctions: (() => any)[] = []
   public onUpdateFunctions: (() => any)[] = []
-  public onDestroyFunctions: (() => any | boolean)[] = []
+  public onDestroyFunctions: (() => any | boolean)[] = [];
+  public styles: Record<string, string | number | boolean> = {}
 
   constructor(props: Record<string, any> = {}) {
     for (const key in props) {
@@ -57,6 +58,11 @@ export class Component {
     for (const child of children) {
       this.withChild(child)
     }
+    return this
+  }
+
+  public withStyles(styles: Record<string, string | number | boolean>): this {
+    this.styles = { ...this.styles, ...styles }
     return this
   }
 
@@ -112,7 +118,7 @@ export class Component {
   }
 
   public as(tagName: string): this {
-    this.tagName = tagName
+    this.tagName = tagName;
     return this
   }
 
