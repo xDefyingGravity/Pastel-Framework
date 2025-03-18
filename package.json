@@ -23,7 +23,7 @@
     "loc": "cloc --match-d='/(src|examples|tests)/' --exclude-dir=node_modules .",
     "lint": "eslint src",
     "format": "prettier --write .",
-    "dist": "bun run build && bun pm pack --filename pastel-0.0.1.tgz"
+    "dist": "bun run build && bun pm pack --filename pastel-0.0.0.tgz"
   },
   "files": [
     "dist",
