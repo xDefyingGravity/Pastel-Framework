@@ -102,7 +102,7 @@ app.onDestroy(() => {
   // recommended to destroy state when component is destroyed, unless you are halting the destroy process
   app.state.destroy()
 
-  return true;
+  return false;
 })
 
 const head = new Head('My Awesome app')

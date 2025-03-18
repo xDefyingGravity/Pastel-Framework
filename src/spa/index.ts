@@ -55,7 +55,6 @@ export class Router {
     if (route === null || !this.routes[route]) {
       this.current_route =
         this.routes['/404'] ||
-        this.routes['/'] ||
         this.routes['/default'] ||
         this.routes['/']
     } else {

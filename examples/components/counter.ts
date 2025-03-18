@@ -1,4 +1,4 @@
-import { Button } from '../../src'
+import { Button, $window } from '../../src'
 
 export class Counter extends Button {
   constructor() {
@@ -7,6 +7,7 @@ export class Counter extends Button {
 
     this.onClick(() => {
       this.state.set('count', (this.state.get('count') ?? 0) + 1)
+      $window.set('title', `You clicked the counter ${this.state.get('count')} times!`)
     })
 
     this.withClassNames(
@@ -20,6 +21,7 @@ export class Counter extends Button {
 
     this.onRender(() => {
       this.state.set('count', 0)
+      $window.set('title', 'You clicked the counter 0 times!')
     })
   }
 }

@@ -17,13 +17,15 @@
     "package.json"
   ],
   "dependencies": {
+    "@types/marked": "^6.0.0",
     "bun-plugin-dts": "^0.3.0",
-    "expr-eval": "^2.0.2"
+    "expr-eval": "^2.0.2",
+    "marked": "^15.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@happy-dom/global-registrator": "^17.1.8",
-    "@types/bun": "latest",
+    "@types/bun": "^1.2.5",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
     "eslint": "^9.21.0",

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+  <html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/gh/PrismJS/prism-themes@master/themes/prism-dracula.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+        <title>Markdown Page</title>
+        <style>
+          body {
+               font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+               background-color: #f0f2f5;
+               color: #333;
+               margin: 0;
+               padding: 0;
+               line-height: 1.6;
+           }
+
+           .markdown-container {
+               max-width: 800px;
+               margin: 40px auto;
+               background-color: #ffffff;
+               padding: 40px;
+               border-radius: 12px;
+               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+               transition: transform 0.3s ease-in-out;
+           }
+
+           .markdown-container:hover {
+               transform: translateY(-5px);
+           }
+
+           h1 {
+               font-size: 2.5rem;
+               font-weight: 700;
+               color: #2a2e33;
+               margin-bottom: 20px;
+               padding-bottom: 10px;
+           }
+
+           h2 {
+               font-size: 2rem;
+               font-weight: 600;
+               color: #2a2e33;
+               margin-top: 30px;
+               margin-bottom: 15px;
+           }
+
+           h3 {
+               font-size: 1.5rem;
+               font-weight: 500;
+               color: #2a2e33;
+               margin-top: 20px;
+           }
+
+           p {
+               font-size: 1.125rem;
+               color: #555;
+               margin-bottom: 20px;
+               line-height: 1.8;
+           }
+
+           a {
+               color: #4f7af8;
+               text-decoration: none;
+               font-weight: 500;
+               transition: color 0.3s ease;
+           }
+
+           a:hover {
+               color: #2d60c4;
+           }
+
+           code {
+               background-color: #f7f7f7;
+               padding: 6px 8px;
+               border-radius: 5px;
+               font-size: 1rem;
+               color: #d14e4e;
+               font-family: 'Courier New', Courier, monospace;
+           }
+
+           pre {
+               background-color: #2e2e2e;
+               color: #f7f7f7;
+               padding: 20px;
+               border-radius: 10px;
+               overflow-x: auto;
+               font-size: 1rem;
+               font-family: 'Courier New', Courier, monospace;
+           }
+
+           blockquote {
+               background-color: #f7f7f7;
+               border-left: 5px solid #4f7af8;
+               padding: 15px 20px;
+               margin: 20px 0;
+               font-style: italic;
+               color: #666;
+           }
+
+           ul, ol {
+               margin-left: 20px;
+               margin-bottom: 20px;
+           }
+
+           li {
+               font-size: 1.125rem;
+               color: #444;
+               line-height: 1.7;
+           }
+
+           img {
+               max-width: 100%;
+               border-radius: 8px;
+           }
+
+           hr {
+               border: none;
+               height: 2px;
+               background-color: #dfe3e8;
+               margin: 10px 0;
+               border-radius: 10px;
+           }
+
+           .up-next-links {
+               display: flex;
+               gap: 20px;
+               flex-wrap: wrap;
+               justify-content: flex-start;
+               margin-top: 10px;
+           }
+
+           .up-next-links a {
+               font-size: 1.125rem;
+               font-weight: 500;
+               color: #4f7af8;
+               text-decoration: none;
+               background-color: #f0f4ff;
+               padding: 12px 20px;
+               border-radius: 8px;
+               border: 2px solid #4f7af8;
+               transition: all 0.3s ease;
+               display: inline-block;
+           }
+
+           .up-next-links a:hover {
+               background-color: #4f7af8;
+               color: white;
+               transform: translateY(-3px);
+               box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+           }
+
+           .up-next-links a:active {
+               transform: translateY(1px);
+           }
+
+           .up-next-links a:focus {
+               outline: none;
+               border-color: #2d60c4;
+               box-shadow: 0 0 0 3px rgba(45, 96, 196, 0.3);
+           }
+        </style>
+     </head>
+     <body>
+        <div class="markdown-container">
+          <h1>Introduction</h1>
+<hr>
+
+<h2>What is Pastel?</h2>
+<p>Pastel is a simple and easy-to-use way to create frontend applications.
+It has builtin SPA support and is built to be lightweight and easy to integrate into existing projects</p>
+<p>Here is a simple example:</p>
+<pre><code class="language-javascript">// counter.js
+import { Button } from &#39;pastel&#39;
+
+export class Counter extends Button {
+  constructor() {
+    super()
+    this.text = &#39;You clicked the counter {{count}} times!&#39;
+
+    this.onClick(() =&gt; {
+      this.state.set(&#39;count&#39;, (this.state.get(&#39;count&#39;) ?? 0) + 1)
+    })
+
+    this.onRender(() =&gt; {
+      this.state.set(&#39;count&#39;, 0)
+    })
+  }
+}
+</code></pre>
+<p>In this example, we create a simple counter component that increments a counter when clicked.</p>
+<p>The example above makes use of multiple of Pastel&#39;s features, such as:</p>
+<ul>
+<li><strong>State management</strong>: Pastel uses a simple state management system that allows you to easily manage the state of your components.</li>
+<li><strong>Event handling</strong>: Pastel has a simple event handling system that allows you to easily handle events such as clicks and key presses.</li>
+<li><strong>Component lifecycle</strong>: Pastel has a simple component lifecycle that allows you to easily handle the creation and destruction of components.</li>
+</ul>
+<h2>Why Pastel?</h2>
+<p>We have designed Pastel to be easy to integrate into existing projects, making it effortless to migrate from vanilla html.
+<br></p>
+<h2>API</h2>
+<h3>Components</h3>
+<p>Pastel components are classes that extend the <code>Component</code> class or any of its subclasses.
+For example, the <code>Button</code> class is a subclass of the <code>Component</code> class.</p>
+<pre><code class="language-javascript">import { Button } from &#39;pastel&#39;
+
+export class MyButton extends Button {
+  constructor() {
+    super()
+    this.text = &#39;Click me!&#39;
+    this.onClick(() =&gt; {
+      console.log(&#39;Button clicked!&#39;)
+    });
+    this.withClassName(&quot;my-button&quot;);
+  }
+}
+</code></pre>
+<p>Now, you can use the <code>MyButton</code> component in your main file:</p>
+<pre><code class="language-javascript">import { Component } from &#39;pastel&#39;
+import { MyButton } from &#39;./my-button.js&#39;
+
+export default class App extends Component {
+  constructor() {
+    super();
+    
+    this.withChildren(
+      MyButton
+    )
+  }
+}
+</code></pre>
+<h3>State &amp; Templates</h3>
+<p>Pastel components have a state object that can be used to store data.
+The state object is a simple key-value store that can be accessed using the <code>state</code> property of the component.</p>
+<pre><code class="language-javascript">import { Button } from &#39;pastel&#39;
+
+export class MyButton extends Button {
+  constructor() {
+    super()
+    this.text = &#39;You clicked the button {{count}} times!&#39;
+    this.onClick(() =&gt; {
+      console.log(&#39;Button clicked!&#39;)
+      this.state.set(&#39;count&#39;, (this.state.get(&#39;count&#39;) ?? 0) + 1)
+    });
+    this.withClassName(&quot;my-button&quot;);
+  }
+}
+</code></pre>
+<p>In this example, we create a simple button component that increments a counter when clicked.
+The <code>state</code> property is used to store the counter value.</p>
+<hr>
+
+<p>Up Next:</p>
+<div class="up-next-links">
+    <a href="/getting-started">Getting Started</a>
+    <a href="/examples">Examples</a>
+</div>
+        </div>
+     </body>
+  </html>

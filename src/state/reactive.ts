@@ -1,14 +1,16 @@
 export class $reactive<T> {
   private listeners: Set<Function> = new Set()
+  public static all = Symbol('all')
+
   constructor(private value: T) {
     this.value = value
   }
 
-  subscribe(listener: (data: T) => any) {
+  subscribe(listener: (data: T, changed: any[]) => any) {
     this.listeners.add(listener)
   }
 
-  unsubscribe(id: (data: T) => void): void {
+  unsubscribe(id: (data: T, changed: any[]) => void): void {
     this.listeners.delete(id)
   }
 
@@ -32,7 +34,7 @@ export class $reactive<T> {
     } else {
       throw new Error('[error] cannot assign a value to a non-object value')
     }
-    this.listeners.forEach(listener => listener(this.value))
+    this.listeners.forEach(listener => listener(this.value, [value !== null ? key : $reactive.all]))
     return
   }
 
