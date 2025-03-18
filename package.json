@@ -1,10 +1,25 @@
 {
-  "name": "pastel",
+  "name": "@pastel/core",
   "version": "1.0.0",
-  "description": "",
+  "description": "Pastel is a lightweight and simple frontend framework for building web applications.",
+  "keywords": [
+    "pastel",
+    "frontend",
+    "framework",
+    "web",
+    "application",
+    "javascript",
+    "typescript"
+  ],
+  "author": "Will Ballantine",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xDefyingGravity/Pastel-Framework"
+  },
   "main": "dist/index.js",
   "scripts": {
-    "build": "bun run utils/build.ts",
+    "build": "bun run utils/build.ts && bun tsc",
     "loc": "cloc --match-d='/(src|examples|tests)/' --exclude-dir=node_modules .",
     "lint": "eslint src",
     "format": "prettier --write .",
@@ -17,22 +32,23 @@
     "package.json"
   ],
   "dependencies": {
-    "@types/marked": "^6.0.0",
-    "bun-plugin-dts": "^0.3.0",
+    "@types/bun": "^1.2.5",
     "expr-eval": "^2.0.2",
     "marked": "^15.0.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@happy-dom/global-registrator": "^17.1.8",
-    "@types/bun": "^1.2.5",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
     "eslint": "^9.21.0",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^8.26.0"
+    "typescript-eslint": "^8.26.0",
+    "@types/marked": "^6.0.0"
   },
-  "private": true
+  "publishConfig": {
+    "access": "public"
+  }
 }
