@@ -8,7 +8,7 @@ It has builtin SPA support and is built to be lightweight and easy to integrate 
 Here is a simple example:
 ```javascript
 // counter.js
-import { Button } from 'pastel'
+import { Button } from '@pastel-framework/core'
 
 export class Counter extends Button {
   constructor() {
@@ -44,7 +44,7 @@ Pastel components are classes that extend the `Component` class or any of its su
 For example, the `Button` class is a subclass of the `Component` class.
 
 ```javascript
-import { Button } from 'pastel'
+import { Button } from '@pastel-framework/core'
 
 export class MyButton extends Button {
   constructor() {
@@ -60,7 +60,7 @@ export class MyButton extends Button {
 
 Now, you can use the `MyButton` component in your main file:
 ```javascript
-import { Component } from 'pastel'
+import { Component } from '@pastel-framework/core'
 import { MyButton } from './my-button.js'
 
 export default class App extends Component {
@@ -79,7 +79,7 @@ export default class App extends Component {
 Pastel components have a state object that can be used to store data.
 The state object is a simple key-value store that can be accessed using the `state` property of the component.
 ```javascript
-import { Button } from 'pastel'
+import { Button } from '@pastel-framework/core'
 
 export class MyButton extends Button {
   constructor() {

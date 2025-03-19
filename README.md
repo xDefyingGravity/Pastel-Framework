@@ -15,13 +15,13 @@
 ### Installation
 
 ```bash
-npm i pastel
+npm i @pastel-framework/core
 ```
 
 ### Pipelines
 Pipelines are a powerful way to transform all components, with support for whitelists, blacklists, and ignored components.
 ```javascript
-import { Pipeline } from 'pastel';
+import { Pipeline } from '@pastel-framework/core';
 const pipeline = new Pipeline([
   {
     modifier: 'attributes',
@@ -59,7 +59,7 @@ All you have to do is call pipeline.mount() and it will be applied to any render
 ### Example
 
 ```javascript
-import { Div, Paragraph, Router, Head } from 'pastel'
+import { Div, Paragraph, Router, Head } from '@pastel-framework/core'
 
 const app = new Div().withChildren(new Paragraph().withText('Hello World!'))
 
